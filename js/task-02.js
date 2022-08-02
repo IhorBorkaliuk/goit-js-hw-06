@@ -7,8 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsList = document.createElement('ul')
-console.log(ingredientsList)
+const ingredientsList = document.querySelector('ul')
 
 const ingredientCreate = ingredient => {
 
