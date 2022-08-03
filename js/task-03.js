@@ -14,3 +14,10 @@ const images = [
 ];
 
 
+const imgList = document.querySelector('.gallery')
+
+const imgListEl = images
+  .map(image => `<li><img src="${image.url}" alt="$(image.alt)"/></li>`)
+  .join('')
+  imgList.insertAdjacentHTML('afterbegin', imgListEl)
+
