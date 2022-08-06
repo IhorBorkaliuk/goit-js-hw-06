@@ -12,7 +12,6 @@ function onSubmitForm(event) {
     event.preventDefault()
 
     const wayToElements = event.currentTarget.elements
-    console.log(wayToElements)
 
     const mail = wayToElements.email.value;
 
@@ -25,7 +24,8 @@ function onSubmitForm(event) {
     event.currentTarget.reset()
 
     const dataForm = {
-        mail, password
+      Email:  mail, 
+      Password:  password
     }
     console.log(dataForm)
 

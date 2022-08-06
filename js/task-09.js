@@ -15,7 +15,9 @@ console.log(findBody)
 btnChangeColor.addEventListener('click', onChangeColor)
 
 function onChangeColor() {
-  findBody.style.backgroundColor = getRandomHexColor()
+  const bodyColor = getRandomHexColor()
 
-  findColor.textContent = getRandomHexColor()
+  findBody.style.backgroundColor = bodyColor
+
+  findColor.textContent = bodyColor
 }
