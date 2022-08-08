@@ -1,10 +1,8 @@
 const formEl = document.querySelector('.login-form')
 
 const mailEl = document.querySelector('[type="email"]')
-console.log(mailEl)
 
 const passwordEl = document.querySelector('[type="password"]')
-console.log(passwordEl)
 
 formEl.addEventListener('submit', onSubmitForm)
 
@@ -18,15 +16,16 @@ function onSubmitForm(event) {
     const password = wayToElements.password.value;
 
     if(mail === '' || password === '') {
-        alert('Заповніть, будь ласка, всі поля!')
+      return alert('Заповніть, будь ласка, всі поля!')
     }
+
+    if(mail !== '' || password !== '') {
+      const dataForm = {
+        Email:  mail, 
+        Password:  password
+      }
 
     event.currentTarget.reset()
-
-    const dataForm = {
-      Email:  mail, 
-      Password:  password
-    }
-    console.log(dataForm)
-
+    
+    console.log(dataForm)  }
 }
