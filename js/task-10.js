@@ -14,23 +14,36 @@ console.log(destroyEl)
 const boxesEl = document.querySelector('#boxes')
 console.log(boxesEl)
 
-function createBoxes(amount) {
+let countOf = 0
+let startSizes = 30
+
+function getAmount(value) {
+  countOf = value.currentTarget.value
+}
   let amountDiv = []
-  for(let i = 0; i < amount; i += 1) {
-  const newDiv = document.createElement('div')
-  newDiv.style.height = `${30 + 10 * i}px`
-  newDiv.style.width = `${30 + 10 * i}px`
+
+function createBoxes() {
+  for (let i = 0; i < countOf; i += 1) {
+    startSizes += 10
+    const newDiv = document.createElement('div')
+  newDiv.classList.add('box-item')
+  newDiv.style.height = `${startSizes}px`
+  newDiv.style.width = `${startSizes}px`
   newDiv.style.background = getRandomHexColor()
-  amountDiv.push(newDiv)
+    amountDiv.push(newDiv)
+    boxesEl.append
   }
-  return amountDiv
+  boxesEl.append(...amountDiv)
 }
 
-createEl.addEventListener('click', () => {
-  let addedDiv = createBoxes(inputEl.value)
-  boxesEl.append(...addedDiv)  
-})
+createEl.addEventListener('click', createBoxes)
 
 destroyEl.addEventListener('click', () => {
   boxesEl.innerHTML = ''
+  amountDiv = []
+  countOf = 0
+  startSizes = 30
+  inputEl.value = ''
 })
+
+inputEl.addEventListener('input', getAmount)
